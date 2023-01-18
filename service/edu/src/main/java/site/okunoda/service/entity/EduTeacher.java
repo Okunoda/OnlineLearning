@@ -41,7 +41,7 @@ public class EduTeacher implements Serializable {
     @ApiModelProperty(value = "讲师资历,一句话说明讲师")
     private String career;
 
-    @ApiModelProperty(value = "头衔 1高级讲师 2首席讲师")
+    @ApiModelProperty(value = "头衔 1教授 2副教授 3讲师")
     private Integer level;
 
     @ApiModelProperty(value = "讲师头像")
@@ -56,9 +56,11 @@ public class EduTeacher implements Serializable {
     private Integer isDeleted;
 
     @ApiModelProperty(value = "创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
     @ApiModelProperty(value = "更新时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
 
 
