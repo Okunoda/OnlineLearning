@@ -32,7 +32,7 @@
 
 <!--service_base中的ExceptionHandler中使用到了R类，所以service_base中引入了common_utils依赖，如果这里再引入的话就重复引入了common_utils依赖
 
-    这是用到了maven中的依赖传递特性-->
+    这是用到了maven中的依赖传递特性 -->
 <!--        <dependency>-->
 <!--            <groupId>site.okunoda</groupId>-->
 <!--            <artifactId>common_utils</artifactId>-->
