@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="app">
+        <table border="1px">
+            <tr v-for="user in userList">
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            //axios固定结构
+            data:{  //在data定义变量和初始值
+                userList:[]
+            },
+            created(){  //在页面渲染之前执行
+                //通常在这里调用定义的方法
+                this.getUserList()
+            },
+            methods:{
+                // 编写具体的方法
+                getUserList(){
+                    //使用axios发送ajax请求  
+                    //语法： axios.提交方式("请求接口路径").then().catch()
+                    axios.get("demo.json")
+                         .then(Myresponse => {
+                            //Myresponse就是请求之后返回的数据
+                            console.log(Myresponse)
+
+                            //通过Myresponse获取具体数据，赋值给定义的空数组，层级关系可以看console输出的data中的层次
+                            this.userList = Myresponse.data.data.items
+                            console.log(this.userList)
+                         })//请求成功执行then方法
+                         .catch(MyError => {
+                            alert("数据获取失败哦")
+                         })//请求失败会执行catch方法
+
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

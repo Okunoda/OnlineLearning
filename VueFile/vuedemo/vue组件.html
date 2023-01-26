@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用自定义组件的名字，用作标签 -->
+        <diyname >{{fun()}}</diyname>        
+         
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+
+            },
+            components:{
+                //组件名字，首字母可以大写，之后的不能出现大写，即不支持驼峰命名规则
+                diyname:{
+                    // 组件内容
+                    template:"<ul><li v-for='n in 10'>{{n}}</li></ul>"
+                }
+            },
+            methods:{
+                fun(){
+                    console.log("fun running...")
+                }
+            },
+            created(){
+                //方法名称固定，在页面渲染之前执行
+                console.log("created running...")
+            },
+            mounted(){
+                //方法名称固定，在页面渲染之后
+                console.log("mounted running...")
+            }
+        })
+    </script>
+</body>
+
+</html>

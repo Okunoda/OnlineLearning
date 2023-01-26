@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- 注意，以下两种写法中的search(),这个()可以不加，效果一样 -->
+        <button v-on:click="search()">事件绑定测试按钮</button>
+        <!-- 简写方式 -->
+        <button @click="search()">简写方式</button>
+
+        <button @click="search()">赋值跳转按钮</button>
+        <p>
+            <a v-bind:href="result.site">{{result.title}}</a>
+        </p>
+        
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                searchMap:{
+                    keyWord:"OnlineLearning",
+                    site:""
+                },
+                //查询结果
+                result:{
+                    
+                }
+            },
+            //定义多个方法
+            methods:{
+                search() {
+                    console.log("seach method is running!!!")
+                    this.result = {
+                        "title":"onlineLearning",
+                        "site":"https://baidu.com"
+                    }
+                },
+                fun1() {
+                    console.log("fun1 method is running!!!")
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

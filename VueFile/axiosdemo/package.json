@@ -1,0 +1,18 @@
+{
+  "name": "axiosdemo",
+  "version": "1.0.0",
+  "main": "nodeDemo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Okunoda",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "description": ""
+}

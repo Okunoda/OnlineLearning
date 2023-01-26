@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="n in 10">{{n}}</li>
+        </ul>
+
+        <ol>
+            <!-- (当前遍历次数，下标索引) in 循环次数 -->
+            <li v-for="(n,now) in 10">{{n}}的下标是{{now}}</li>
+        </ol>
+
+        <hr/>
+        <table>
+            <tr v-for="user in userList">
+                <td>{{user.username}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.id}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userList:[
+                    {id:1,username:"张三",age:123},
+                    {id:2,username:"李四",age:234},
+                    {id:3,username:"王五",age:333}
+                ]
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

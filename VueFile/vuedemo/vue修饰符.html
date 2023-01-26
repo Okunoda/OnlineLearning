@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <form action="save" v-on:submit.prevent="onSubmit()">
+            <input type="text" v-model="user.username" />
+            <button type="submit" >提交</button>
+        </form>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                user:{},
+                result:{}
+            },
+            methods:{
+                onSubmit(){
+                    if(this.user.username){
+                        console.log("提交表单，用户名为"+this.user.username)
+                    }
+                    else{
+                        alert("未输入用户名")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- id标识vue作用的范围 -->
+    <div id="app">
+        
+        <!-- 用插值表达式绑定vue中的data数据 语法为：{{ 名称 }}-->
+        {{message}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        //创建vue对象
+        new Vue({
+            el:'#app',
+            data:{//定义页面中显示的数据
+                message:'hello vue'
+            }
+        })
+    </script>
+</body>
+</html>
