@@ -4,7 +4,7 @@ package site.okunoda.common_utils;
 
 
 public enum StatusCode {
-     SUCCESS("成功",2000),
+     SUCCESS("成功",20000),
      ERROR("失败",20001);
 
      private String name;

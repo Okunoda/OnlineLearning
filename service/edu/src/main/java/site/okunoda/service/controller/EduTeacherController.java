@@ -1,9 +1,5 @@
 package site.okunoda.service.controller;
 
-
-
-
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.util.StringUtils;
@@ -13,10 +9,10 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import site.okunoda.service.entity.Courage;
 import site.okunoda.service.entity.EduTeacher;
 import site.okunoda.service.entity.vo.TeacherQuery;
 import site.okunoda.service.service.EduTeacherService;
-
 import java.util.List;
 
 /**
@@ -30,6 +26,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/service/edu-teacher")
 @Api("讲师管理")
+@CrossOrigin //解决跨域问题
 public class EduTeacherController {
 
     @Autowired
@@ -88,13 +85,14 @@ public class EduTeacherController {
         Integer level = teacherQuery.getLevel();
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
+        String courage = teacherQuery.getCourage();
 
 
         //注意，wrapper中的参数是 字段名 ，并非实体类的属性名。注意与使用自动填充时this.setFieldValByName()方法中的参数是实体类的属性名相区分
-        if(!StringUtils.isEmpty(teacherQuery.getName())){
+        if(!StringUtils.isEmpty(name)){
             wrapper.like("name",name);
         }
-        if(level!=0){
+        if(!StringUtils.isEmpty(level)){
             wrapper.eq("level",level);
         }
         if(!StringUtils.isEmpty(begin)){
@@ -103,6 +101,12 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)){
             wrapper.le("gmt_modified",end);
         }
+        if(!StringUtils.isEmpty(courage)){
+            wrapper.eq("courage",courage);
+        }
+
+        //最终返回数据按照创建时间降序排列
+        wrapper.orderByDesc("gmt_create");
 
         teacherService.page(page,wrapper);
 
@@ -112,6 +116,7 @@ public class EduTeacherController {
     @ApiOperation(value="添加教师")
     @PostMapping("addTeacher")
     public R addTeacher(@RequestBody EduTeacher eduTeacher){
+        eduTeacher.setCourage(Courage.getName(Integer.parseInt(eduTeacher.getCourage())));
         boolean save = teacherService.save(eduTeacher);
         if(save)
             return R.success();
@@ -121,7 +126,7 @@ public class EduTeacherController {
 
     @ApiOperation(value = "根据id查询讲师")
     @GetMapping("getTeacher/{id}")
-    public R getTeacherById(@PathVariable Integer id){
+    public R getTeacherById(@PathVariable Long id){
         EduTeacher teacher = teacherService.getById(id);
         return R.success().data("item",teacher);
     }
@@ -139,10 +144,6 @@ public class EduTeacherController {
         else
             return R.error();
     }
-
-
-
-
 
 }
 

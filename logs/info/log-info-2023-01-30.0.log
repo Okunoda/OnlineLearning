@@ -1,0 +1,26 @@
+2023-01-30 23:11:59.156 [main] INFO  site.okunoda.service.EduApplication - Starting EduApplication on Avada-kedavra with PID 36632 (started by Lenovo in E:\project\毕设\onlineLearning)
+2023-01-30 23:11:59.165 [main] INFO  site.okunoda.service.EduApplication - The following profiles are active: dev
+2023-01-30 23:12:00.583 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-01-30 23:12:00.587 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-01-30 23:12:00.616 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2023-01-30 23:12:00.999 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-30 23:12:01.323 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+2023-01-30 23:12:01.332 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2023-01-30 23:12:01.333 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-01-30 23:12:01.333 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2023-01-30 23:12:01.513 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-01-30 23:12:01.513 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2219 ms
+2023-01-30 23:12:01.741 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-01-30 23:12:01.941 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-01-30 23:12:02.470 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-01-30 23:12:02.590 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-01-30 23:12:03.157 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2023-01-30 23:12:03.177 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2023-01-30 23:12:03.213 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2023-01-30 23:12:03.418 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: pageListTeacherUsingGET_1
+2023-01-30 23:12:03.447 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2023-01-30 23:12:03.469 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+2023-01-30 23:12:03.473 [main] INFO  site.okunoda.service.EduApplication - Started EduApplication in 5.079 seconds (JVM running for 7.189)
+2023-01-30 23:12:14.857 [http-nio-8000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 23:12:14.858 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-01-30 23:12:14.866 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms

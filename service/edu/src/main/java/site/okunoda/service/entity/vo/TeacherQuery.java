@@ -21,4 +21,7 @@ public class TeacherQuery {
 
     @ApiModelProperty(value = "查询结束时间", example = "yyyy-MM-dd HH:mm:ss")
     private String end;
+
+    @ApiModelProperty(value="学院名称",example="电子与信息工程学院")
+    private String courage;
 }

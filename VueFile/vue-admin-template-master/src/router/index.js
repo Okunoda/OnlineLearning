@@ -38,23 +38,32 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/teacher',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/teacher/table',
+    name: '教师管理',
+    meta: { title: '教师管理', icon: 'example' },
     children: [
       {
         path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        name: '教师列表',
+        component: () => import('@/views/onlineLearn/teacher/list'),
+        meta: { title: '教师列表', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'save',
+        name: '添加教师',
+        component: () => import('@/views/onlineLearn/teacher/save'),
+        meta: { title: '添加教师', icon: 'tree' }
+      },
+      {
+        // "/:id类似于java中的/{id}"
+        //是需要在路径中传入具体参数的
+        path:'edit/:id',
+        name:'修改教师信息',
+        component:()=> import('@/views/onlineLearn/teacher/save'),
+        meta:{title:'编辑讲师',noCache:true},
+        hidden:true
       }
     ]
   },

@@ -2,6 +2,7 @@ package demo;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import site.okunoda.service.entity.Courage;
 import site.okunoda.service.mapper.EduTeacherMapper;
 
 /**
@@ -19,4 +20,8 @@ public class Demo {
 //        eduTeacherMapper.deleteById()
     }
 
+    @Test
+    public void getEnumName(){
+        System.out.println(Courage.getName(2));
+    }
 }
