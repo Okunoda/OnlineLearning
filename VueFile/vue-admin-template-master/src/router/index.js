@@ -61,7 +61,7 @@ export const constantRouterMap = [
         //是需要在路径中传入具体参数的
         path:'edit/:id',
         name:'修改教师信息',
-        component:()=> import('@/views/onlineLearn/teacher/save'),
+        component:()=> import('@/views/onlineLearn/teacher/list'),
         meta:{title:'编辑讲师',noCache:true},
         hidden:true
       }

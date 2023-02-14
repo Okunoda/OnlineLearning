@@ -9,13 +9,13 @@ import site.okunoda.service.entity.Courage;
 
 /**
  * @author Okunoda
- * @date 2023Äê01ÔÂ26ÈÕ20:16
+ * @date 2023å¹´01æœˆ26æ—¥20:16
  */
 
 
 @RestController
 @RequestMapping("/service/user")
-@CrossOrigin    //½â¾ö¿çÓòÎÊÌâ
+@CrossOrigin    //è§£å†³è·¨åŸŸé—®é¢˜
 public class EduLoginController {
 
     @GetMapping("/login")
